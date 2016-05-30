@@ -85,6 +85,15 @@
             "undo", "redo", "|",
             "watch", "preview", "|",
             "help", "info"
+        ],
+        my : [
+            "undo", "redo", "|",
+            "bold", "del", "italic", "quote", "ucwords", "uppercase", "lowercase", "|",
+            "h1", "h2", "h3", "h4", "h5", "h6", "|",
+            "list-ul", "list-ol", "hr", "|",
+            "link", "reference-link", "image", "code","more", "preformatted-text", "code-block", "table", "datetime", "pagebreak", "|",
+            "goto-line", "watch", "preview", "fullscreen", "clear", "search", "|",
+            "help", "info"
         ]
     };
     
@@ -187,6 +196,7 @@
             "ucwords"        : "<a href=\"javascript:;\" title=\"ucwords\" unselectable=\"on\"><i class=\"fa\" name=\"ucwords\" style=\"font-size:20px;margin-top: -3px;\">Aa</i></a>"
         }, 
         toolbarIconsClass    : {
+            more             : "fa-plus",    //为hexo添加的更多按钮
             undo             : "fa-undo",
             redo             : "fa-repeat",
             bold             : "fa-bold",
@@ -231,6 +241,7 @@
             description : "开源在线Markdown编辑器<br/>Open source online Markdown editor.",
             tocTitle    : "目录",
             toolbar     : {
+                more             : "更多 (hexo标签)",
                 undo             : "撤销（Ctrl+Z）",
                 redo             : "重做（Ctrl+Y）",
                 bold             : "粗体",
@@ -2810,6 +2821,11 @@
     };
 
     editormd.toolbarHandlers = {
+        //增加的more按钮功能
+        more : function(){
+            var cm        = this.cm;
+            cm.replaceSelection("<!--more-->");
+        },
         undo : function() {
             this.cm.undo();
         },

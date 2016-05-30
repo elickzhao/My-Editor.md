@@ -43,7 +43,7 @@
 	</div>
 	
 	    <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
-        <script src="editormd.min.js"></script>
+        <script src="editormd.js"></script>
         <script type="text/javascript">
 			var testEditor;
 
@@ -52,32 +52,7 @@
                     width   : "90%",
                     height  : 640,
                     path    : "lib/",
-                    toolbarIcons : function(){ 
-                        return [            "undo", "redo", "|", 
-                                    "bold", "del", "italic", "quote", "ucwords", "uppercase", "lowercase", "|", 
-                                    "h1", "h2", "h3", "h4", "h5", "h6", "|", 
-                                    "list-ul", "list-ol", "hr", "|",
-                                    "link", "reference-link", "image", "code","more", "preformatted-text", "code-block", "table", "datetime", "pagebreak", "|",
-                                    "goto-line", "watch", "preview", "fullscreen", "clear", "search", "|",
-                                    "help", "info"]                    
-                    },
-                    toolbarIconsClass :{
-                        more : " fa-plus"
-                    },
-                            // 自定义工具栏按钮的事件处理
-                    toolbarHandlers : {
-                        /**
-                         * @param {Object}      cm         CodeMirror对象
-                         * @param {Object}      icon       图标按钮jQuery元素对象
-                         * @param {Object}      cursor     CodeMirror的光标对象，可获取光标所在行和位置
-                         * @param {String}      selection  编辑器选中的文本
-                         */
-
-                        more : function(cm, icon, cursor, selection) {
-                            cm.replaceSelection("<!--more-->");
-                            //console.log("more =>", this, icon.html());
-                        }
-                    }
+                    toolbarIcons : "my"
                 });
                 
                 /*
