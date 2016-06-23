@@ -3,7 +3,7 @@
 在此感谢大神提供这么好用的工具.
 
 Editor.md项目地址
-[https://github.com/elickzhao/My-Editor.md](https://github.com/elickzhao/My-Editor.md)
+[https://pandao.github.io/editor.md/](https://pandao.github.io/editor.md/)
 
 
 
